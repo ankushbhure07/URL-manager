@@ -5,8 +5,11 @@ import '@ionic/react/css/core.css';
 
 
 import FlashScreen from './modules/info/flash-screen/FlasScreen';
-import { setupIonicReact } from '@ionic/react';
-
+import { IonHeader, IonTitle, IonToolbar, setupIonicReact } from '@ionic/react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Urlwrapper from './modules/url-wrapper/Urlwrapper';
+import Dashboard from './modules/dashboard/Dashboard';
+import { App as CapacitorApp } from '@capacitor/app';
 setupIonicReact();
 function App() {
   const [flashStatus, setFlshStatus] = useState(true);
@@ -16,6 +19,16 @@ function App() {
       setFlshStatus(false);
     }, 2000)
   }, [])
+
+
+  CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+    if (!canGoBack) {
+      CapacitorApp.exitApp();
+    } else {
+      window.history.back();
+    }
+  });
+
   return (
     <div className='bg-gradient vh-100 w-100'>
 
@@ -26,45 +39,19 @@ function App() {
           :
           (
             <div>
-              <ion-header>
-                <ion-toolbar>
-                  <ion-title>{bank_name}</ion-title>
-                </ion-toolbar>
-              </ion-header>
-
-
-              <ion-grid>
-                <ion-row>
-                  <ion-col>
-                    <ion-card>
-                      <ion-card-header>
-                        <ion-card-title>All Forms</ion-card-title>
-                        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                      </ion-card-header>
-
-                      <ion-card-content>
-                        Here's a small text description for the card content. Nothing more, nothing less.
-                      </ion-card-content>
-                    </ion-card>
-                  </ion-col>
-                  <ion-col>
-                    <ion-card>
-                      <ion-card-header>
-                        <ion-card-title>Intrest Rate</ion-card-title>
-                        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                      </ion-card-header>
-
-                      <ion-card-content>
-                        Here's a small text description for the card content. Nothing more, nothing less.
-                      </ion-card-content>
-                    </ion-card>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
+              <IonHeader>
+                <IonToolbar>
+                  <IonTitle>{bank_name}</IonTitle>
+                </IonToolbar>
+              </IonHeader>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="" element={<Dashboard />} />
+                  <Route path="/urlwrapper" element={<Urlwrapper />} />
+                </Routes>
+              </BrowserRouter>
             </div>
           )
-
-
       }
     </div>
   );

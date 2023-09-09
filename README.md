@@ -19,6 +19,8 @@ This project can manage the our customers PDF's, and field Form Information.
   ```
   npm i @capacitor/core
   npm i -D @capacitor/cli
+  npm install @capacitor/app **used for hatrdware back event in android
+  npm install @capacitor/filesystem **used for device file system in android
   npx cap init
   npm i @capacitor/android @capacitor/ios
   npx cap add android
