@@ -9,6 +9,7 @@ import { IonHeader, IonTitle, IonToolbar, setupIonicReact } from '@ionic/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Urlwrapper from './modules/url-wrapper/Urlwrapper';
 import Dashboard from './modules/dashboard/Dashboard';
+import Interesttable from './modules/interesttable/Interesttable';
 import { App as CapacitorApp } from '@capacitor/app';
 setupIonicReact();
 function App() {
@@ -48,6 +49,8 @@ function App() {
                 <Routes>
                   <Route path="" element={<Dashboard />} />
                   <Route path="/urlwrapper" element={<Urlwrapper />} />
+                   <Route path="/interesttable" element ={<Interesttable/>} />
+                   
                 </Routes>
               </BrowserRouter>
             </div>

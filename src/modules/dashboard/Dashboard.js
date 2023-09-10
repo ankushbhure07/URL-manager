@@ -21,7 +21,7 @@ const Dashboard = () => {
                     </IonCol>
                     <IonCol>
                         <IonCard>
-                            <Link to="urlwrapper" className="text-decoration-none">
+                            <Link to="interesttable" className="text-decoration-none">
                                 <IonCardHeader>
                                     <IonCardTitle>Intrest Rate</IonCardTitle>
                                     <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
