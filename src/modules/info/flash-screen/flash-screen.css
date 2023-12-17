@@ -1,0 +1,61 @@
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Bree+Serif&family=Roboto:wght@900&display=swap'); 
+  * {
+    font-family: 'Bree Serif', serif;
+ }
+ 
+ .text-center {
+     text-align: center;
+ }
+
+ .display-table {
+     display: table;
+ }
+
+ .display-cell {
+     display: table-cell;
+ }
+
+ .h-100 {
+     height: 100%;
+ }
+
+ .display-row {
+     display: table-row;
+ }
+
+ .vertical-middle {
+     vertical-align: middle;
+ }
+
+ .fs-20px {
+     font-size: 20px;
+ }
+
+ .font-weight-bold {
+     font-weight: bold;
+ }
+
+ .px-20px {
+     padding-left: 20px;
+     padding-right: 20px;
+ }
+
+ .text-blue {
+     color: #4900ff
+ }
+
+ .bg-opacity {
+     background-color: #ffffff29;
+ }
+
+ .h-100px {
+    height: 100px;
+ }
+
+ .border-rounded {
+    border-radius: 50%;
+ }
+
+ .bg-white {
+    background-color: white;
+ }
